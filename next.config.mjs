@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    // reactStrictMode: true,
     // either omit `output`, or use 'standalone' (good for Docker/Node)
-    output: 'standalone',
+    // output: 'standalone',
+      output: 'export',
+
 };
 
 export default nextConfig;
