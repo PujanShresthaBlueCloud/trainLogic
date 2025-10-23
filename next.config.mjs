@@ -2,7 +2,7 @@
 const nextConfig = {
     // reactStrictMode: true,
     // either omit `output`, or use 'standalone' (good for Docker/Node)
-    // output: 'standalone',
+    output: 'standalone',
     // output: 'export',
 
 };
