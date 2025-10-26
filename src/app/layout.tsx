@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import SessionProviderComp from "@/components/nextauth/SessionProvider";
 import { AuthDialogProvider } from "./context/AuthDialogContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import RetellChatWidget from "@/components/RetellChatWidget";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -29,6 +30,14 @@ export default function RootLayout({
               {children}
               <Footer />
               <ScrollToTop />
+              <RetellChatWidget 
+                publicKey={process.env.NEXT_PUBLIC_RETELL_PUBLIC_KEY!}
+                agentId={process.env.NEXT_PUBLIC_RETELL_VOICE_AGENT_ID!}
+                phoneNumber={process.env.NEXT_PUBLIC_RETELL_PHONE_NUMBER}
+                recaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY!}
+                title="Call our Voice Agent"
+                color="#0ea5a0"              
+              />
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>
