@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   try {
     const apiKey = process.env.RETELL_API_KEY;
-    const agentId = process.env.NEXT_PUBLIC_API_URL_RETELL_VOICE_AGENT_ID;
+    const agentId = process.env.RETELL_VOICE_AGENT_ID;
 
     if (!apiKey || !agentId) {
       return NextResponse.json({ error: "Missing environment variables" }, { status: 500 });
