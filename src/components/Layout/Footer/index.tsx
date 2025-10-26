@@ -2,10 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { footerLinks } from "@/app/api/data";
+import Script from "next/script";
+
 
 const Footer = () => {
   return (
     <footer className="pt-8 bg-midnight_text relative after:content-[''] after:absolute after:bg-[url('/images/footer/bgline.png')] after:bg-no-repeat after:w-52 after:h-24 after:right-0 after:top-28 xl:after:block after:hidden">
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+        strategy="afterInteractive"
+      />
       {/* --- RETELL WIDGET SCRIPT (loads on client after interactive) --- */}
       <Script
         id="retell-widget"
