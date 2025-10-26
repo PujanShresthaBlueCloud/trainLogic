@@ -6,6 +6,23 @@ import { footerLinks } from "@/app/api/data";
 const Footer = () => {
   return (
     <footer className="pt-8 bg-midnight_text relative after:content-[''] after:absolute after:bg-[url('/images/footer/bgline.png')] after:bg-no-repeat after:w-52 after:h-24 after:right-0 after:top-28 xl:after:block after:hidden">
+      {/* --- RETELL WIDGET SCRIPT (loads on client after interactive) --- */}
+      <Script
+        id="retell-widget"
+        src="https://dashboard.retellai.com/retell-widget.js"
+        strategy="afterInteractive"
+        type="module"
+        data-public-key={process.env.NEXT_PUBLIC_RETELL_PUBLIC_KEY}
+        data-agent-id={process.env.NEXT_PUBLIC_RETELL_AGENT_ID}
+        data-widget="callback"
+        data-phone-number={process.env.NEXT_PUBLIC_RETELL_PHONE_NUMBER}
+        data-title="Request a Call"
+        data-countries="US,CA,GB"
+        data-tc="https://yoursite.com/terms"
+        data-color="#FFA07A"
+        data-recaptcha-key={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
+      />
+      {/* ---------------------------------------------------------------- */}
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-2">
         <div className="flex lg:items-center justify-between lg:flex-row flex-col border-b border-dark_border pb-8 mb-16 ">
           <div className="flex sm:flex-nowrap flex-wrap gap-6">
