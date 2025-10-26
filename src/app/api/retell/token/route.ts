@@ -1,45 +1,36 @@
-// src/app/api/retell/route.ts
-export const runtime = "nodejs"; // ensure Node runtime (not Edge)
+import { NextRequest, NextResponse } from "next/server";
 
-import { NextResponse } from "next/server";
-
-const RETELL_BASE = "https://api.retellai.com/v2"; // <- replace with actual base URL if different
-
-export async function POST(req: Request) {
+export async function GET(req: NextRequest) {
   try {
     const apiKey = process.env.RETELL_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        { ok: false, error: "RETELL_API_KEY not set on server environment" },
-        { status: 500 }
-      );
+    const agentId = process.env.NEXT_PUBLIC_RETELL_VOICE_AGENT_ID;
+
+    if (!apiKey || !agentId) {
+      return NextResponse.json({ error: "Missing environment variables" }, { status: 500 });
     }
 
-    // parse incoming request (whatever your frontend sends)
-    const payload = await req.json();
-
-    // Example: forward the payload to Retell's "start call" endpoint.
-    // **Replace** "/voice/calls" and body fields with the exact Retell endpoint / schema.
-    const resp = await fetch(`${RETELL_BASE}/create-phone-call`, {
+    // Call Retell API (server-side)
+    const response = await fetch("https://api.retellai.com/v2/create-web-call", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        "Accept": "application/json",
+        Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify(payload),
-      // optionally set a reasonable timeout wrapper if needed
+      body: JSON.stringify({
+        agent_id: agentId,
+      }),
     });
 
-    const data = await resp.json().catch(() => ({}));
-    if (!resp.ok) {
-      console.error("Retell API error:", resp.status, data);
-      return NextResponse.json({ ok: false, error: data }, { status: resp.status });
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Retell API error:", data);
+      return NextResponse.json({ error: data }, { status: 400 });
     }
 
-    return NextResponse.json({ ok: true, data }, { status: 200 });
-  } catch (err: any) {
-    console.error("Unexpected error in /api/retell:", err);
-    return NextResponse.json({ ok: false, error: err?.message || String(err) }, { status: 500 });
+    return NextResponse.json(data);
+  } catch (error: any) {
+    console.error("Server error:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

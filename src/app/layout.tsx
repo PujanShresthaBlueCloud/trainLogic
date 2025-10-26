@@ -30,14 +30,7 @@ export default function RootLayout({
               {children}
               <Footer />
               <ScrollToTop />
-              <RetellChatWidget 
-                publicKey={process.env.NEXT_PUBLIC_RETELL_PUBLIC_KEY!}
-                agentId={process.env.NEXT_PUBLIC_RETELL_VOICE_AGENT_ID!}
-                phoneNumber={process.env.NEXT_PUBLIC_RETELL_PHONE_NUMBER}
-                recaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY!}
-                title="Call our Voice Agent"
-                color="#0ea5a0"              
-              />
+              <RetellChatWidget />
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>
