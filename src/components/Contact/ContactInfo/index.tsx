@@ -32,8 +32,7 @@ const ContactInfo = () => {
                     Address
                   </span>
                   <p className="text-DeepOcean font-normal text-xl max-w-80 pt-3 pb-7 dark:text-white/60">
-                    221b Baker St, London NW1 6XE,
-                    United Kingdom
+                    NSW Sydney Australia
                   </p>
                 </div>
               </div>
