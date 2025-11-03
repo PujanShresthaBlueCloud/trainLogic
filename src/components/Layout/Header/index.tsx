@@ -2,10 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { headerData } from "../Header/Navigation/menuData";
+import { headerData } from "./Navigation/menuData";
 import Logo from "./Logo";
-import HeaderLink from "../Header/Navigation/HeaderLink";
-import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
+import HeaderLink from "./Navigation/HeaderLink";
+import MobileHeaderLink from "./Navigation/MobileHeaderLink";
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
 import { signOut, useSession } from "next-auth/react";

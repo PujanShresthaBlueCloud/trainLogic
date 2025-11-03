@@ -1,4 +1,5 @@
 import { DM_Sans } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
@@ -9,6 +10,12 @@ import ScrollToTop from "@/components/ScrollToTop";
 import RetellChatWidget from "@/components/RetellChatWidget";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
+const lato = Lato({
+  subsets: ["latin"],      // required
+  weight: ["400", "700"],  // optional: normal & bold
+  display: "swap",         // optional: font-display
+})
+
 export default function RootLayout({
   children,
   session,
@@ -17,7 +24,7 @@ export default function RootLayout({
   session?: any;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={lato.className}>
       <body className={`${dmsans.className}`}>
         <AuthDialogProvider>
           <SessionProviderComp session={session}>
@@ -26,7 +33,7 @@ export default function RootLayout({
               enableSystem={false}
               defaultTheme="light"
             >
-              <Header />
+              {/* <Header /> */}
               {children}
               <Footer />
               <ScrollToTop />
