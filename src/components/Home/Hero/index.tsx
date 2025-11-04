@@ -11,7 +11,7 @@ import { CommunicationAnimation } from "../../../ui/CommunicationAnimation";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950">
+    <section className="relative min-h-screen overflow-hidden bg-linear-to-br from-blue-950 via-slate-900 to-slate-950" id="hero">
       {/* Global animated AI background (kept behind content) */}
       <AINetworkBackground />
 

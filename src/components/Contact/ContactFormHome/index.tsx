@@ -495,7 +495,7 @@ async function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
   };
 
   return (
-    <section className="dark:bg-darkmode overflow-hidden py-14">
+    <section className="dark:bg-darkmode overflow-hidden py-14" id="contact">
       <div className="container mx-auto lg:max-w-6xl md:max-w-(--breakpoint-md) px-4">
         <div
           ref={ref}

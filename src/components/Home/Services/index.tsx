@@ -31,7 +31,7 @@ const Services: FC = () => {
     };
   }, [isModalOpen]);
   return (
-    <section className="dark:bg-darkmode overflow-hidden py-14">
+    <section className="dark:bg-darkmode overflow-hidden py-14" id="services">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div ref={ref}>
           <div className="text-center">

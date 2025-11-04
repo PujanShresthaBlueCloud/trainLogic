@@ -117,7 +117,7 @@ const Process: React.FC = () => {
   }, []);
 
   return (
-    <section id="started" className="dark:bg-darkmode py-14">
+    <section id="process" className="dark:bg-darkmode py-14">
       <div ref={ref} className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <motion.div {...TopAnimation}>
           <div className="px-4 lg:px-12">

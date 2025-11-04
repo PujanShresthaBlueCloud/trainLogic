@@ -36,7 +36,7 @@ const Choose = () => {
                       We cut through the AI hype to deliver strategies that make sense for your business—no jargon, no complexity you don't need.
                     </p>
                     <Link
-                      href="/contact"
+                      href="#contact"
                       className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
                     >
                       Get Started
@@ -49,8 +49,8 @@ const Choose = () => {
                   </div>
                   <div>
                     <Image
-                      src="/images/method/card.png"
-                      alt="card"
+                      src="/images/illustration/clearity.png"
+                      alt="clearity"
                       width={500}
                       height={300}
                       className="xl:w-full w-75% mx-auto"
@@ -71,7 +71,7 @@ const Choose = () => {
                     Every recommendation is explainable. Every model is auditable. We build AI systems you can confidently stand behind.
                   </p>
                   <Link
-                    href="/contact"
+                    href="#contact"
                     className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
                   >
                     Get Started
@@ -82,9 +82,9 @@ const Choose = () => {
                     />
                   </Link>
                 </div>
-                <div className="sm:block hidden w-full">
+                <div className="sm:block hidden w-full pr-5">
                   <Image
-                    src="/images/method/method1.jpg"
+                    src="/images/illustration/trust.svg"
                     alt="image"
                     width={232}
                     height={375}
@@ -103,7 +103,7 @@ const Choose = () => {
                     We don't just implement—we educate. Your team gains the knowledge and confidence to own your AI future.
                   </p>
                   <Link
-                    href="/contact"
+                    href="#contact"
                     className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
                   >
                     Get Started
@@ -114,12 +114,12 @@ const Choose = () => {
                     />
                   </Link>
                 </div>
-                <div className="sm:block hidden w-full">
+                <div className="sm:block hidden w-full pr-5">
                   <Image
-                    src="/images/method/method3.jpg"
-                    alt="image"
+                    src="/images/illustration/chatbot.png"
+                    alt="chatbot"
                     width={232}
-                    height={375}
+                    height={800}
                   />
                 </div>
               </div>
@@ -128,17 +128,17 @@ const Choose = () => {
               <div
                 className="bg-white dark:bg-darkmode rounded-2xl overflow-hidden flex flex-col"
               >
-                <div>
+                <div className="p-10 mt-20 sm:mt-5 md:mt-5">
                   <Image
-                    src="/images/method/method2.jpg"
-                    alt="image"
+                    src="/images/illustration/component.svg"
+                    alt="component"
                     width={500}
                     height={400}
                     quality={100}
                     className="w-full"
                   />
                 </div>
-                <div className="px-9 flex justify-center flex-col py-6">
+                <div className="px-9 flex justify-center flex-col py-6 mb-23 mt-8">
                   <h3 className="md:text-25 text-20 font-medium text-midnight_text dark:text-white mb-6">
                     Solutions That Evolve
                   </h3>
@@ -146,7 +146,7 @@ const Choose = () => {
                     We design intelligent systems that grow with your business, adapting to new challenges and opportunities.
                   </p>
                   <Link
-                    href="/contact"
+                    href="#contact"
                     className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
                   >
                     Get Started
