@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import SocialSignUp from "../SocialSignUp";
-import Logo from "@/components/Layout/Header/Logo"
+// import Logo from "@/components/Layout/Header/Logo"
 import { useState } from "react";
 import Loader from "@/components/Common/Loader";
 const SignUp = () => {
@@ -86,7 +86,7 @@ const SignUp = () => {
           <div className="w-full px-4">
             <div className="relative shadow-lg mx-auto max-w-lg overflow-hidden rounded-4xl bg-white dark:bg-midnight_text px-8 py-14 text-center sm:px-12 md:px-16">
               <div className="mb-10 text-center mx-auto inline-block max-w-[160px]">
-                <Logo />
+                {/* <Logo /> */}
               </div>
 
               <SocialSignUp />

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import SocialSignIn from "../SocialSignIn";
-import Logo from "@/components/Layout/Header/Logo";
+// import Logo from "@/components/Layout/Header/Logo";
 import Loader from "@/components/Common/Loader";
 
 const Signin = () => {
@@ -70,7 +70,7 @@ const Signin = () => {
                     <div className="w-full px-4">
                         <div className="relative shadow-lg mx-auto max-w-lg overflow-hidden rounded-4xl bg-white dark:bg-midnight_text px-8 py-14 text-center sm:px-12 md:px-16">
                             <div className="mb-10 flex justify-center">
-                                <Logo />
+                                {/* <Logo /> */}
                             </div>
 
                             <SocialSignIn />

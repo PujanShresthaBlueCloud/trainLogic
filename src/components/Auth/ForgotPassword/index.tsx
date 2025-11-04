@@ -1,6 +1,6 @@
 "use client";
 import Loader from "@/components/Common/Loader";
-import Logo from "@/components/Layout/Header/Logo";
+// import Logo from "@/components/Layout/Header/Logo";
 import React, { useState } from "react";
 
 const ForgotPassword = () => {
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
             <div className="w-full px-4">
               <div className="relative shadow-lg mx-auto max-w-lg overflow-hidden rounded-4xl dark:bg-midnight_text px-8 py-14 text-center dark:bg-dark-2 sm:px-12 md:px-16">
                 <div className="mb-10 flex justify-center">
-                  <Logo />
+                  {/* <Logo /> */}
                 </div>
 
                 {isEmailSent ? (

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { footerLinks } from "@/app/api/data";
+import { Button } from "@/ui/button";
 
 
 const Footer = () => {
@@ -13,8 +14,7 @@ const Footer = () => {
             <div className="flex items-center text-foottext text-16">
               <Icon icon="weui:location-outlined" className="w-7 h-7 mr-3" />
               <div className="flex flex-col">
-                <span>221b Baker St, London NW1 6XE,</span>
-                <span>United Kingdom</span>
+                <span>Sydney, Australia</span>
               </div>
             </div>
             <div className="flex items-center gap-2 text-foottext">
@@ -29,7 +29,7 @@ const Footer = () => {
                 href="#"
                 className="inline-flex items-center text-16 hover:text-primary"
               >
-                <span>info@mobileapp.com</span>
+                <span>info@trainedlogic.com.au</span>
               </Link>
             </div>
           </div>
@@ -46,18 +46,18 @@ const Footer = () => {
           </div>
         </div>
         <div className="grid grid-cols-12 sm:mb-16 mb-8 pt-8 gap-4 relative before:content-[''] before:absolute before:w-20 before:h-20 before:bg-[url('/images/footer/bgcir.png')] before:bg-no-repeat before:-left-36 before:bottom-9 lg:before:block before:hidden">
-          <div className="md:col-span-2 col-span-6 mb-4 md:mb-0">
+          <div className="md:col-span-2 col-span-6 mb-4 md:mb-0 ml-10">
             <h4 className="text-18 text-white dark:text-white mb-3">
-              Features
+              Links
             </h4>
             <ul>
-              {footerLinks.slice(0, 4).map((item, index) => (
+              {footerLinks.slice(0, 5).map((item, index) => (
                 <li key={index} className="pb-3">
                   <Link
-                    href="#"
+                    href={item.link}
                     className="text-foottext text-16 hover:text-primary"
                   >
-                    {item.link}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -66,16 +66,16 @@ const Footer = () => {
 
           <div className="md:col-span-2 col-span-6 mb-4 md:mb-0">
             <h4 className="text-18 text-white dark:text-white mb-3">
-              Resources
+              Services
             </h4>
             <ul>
-              {footerLinks.slice(4, 9).map((item, index) => (
+              {footerLinks.slice(5, 7).map((item, index) => (
                 <li key={index} className="pb-3">
                   <Link
-                    href="#"
+                    href={item.link}
                     className="text-foottext text-16 hover:text-primary"
                   >
-                    {item.link}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -84,16 +84,16 @@ const Footer = () => {
 
           <div className="md:col-span-3 col-span-6 mb-4 md:mb-0">
             <h4 className="text-18 text-white dark:text-white mb-3">
-              Platform
+              Resources
             </h4>
             <ul>
-              {footerLinks.slice(9, 14).map((item, index) => (
+              {footerLinks.slice(7, 12).map((item, index) => (
                 <li key={index} className="pb-3">
                   <Link
-                    href="#"
+                    href={item.link}
                     className="text-foottext text-16 hover:text-primary"
                   >
-                    {item.link}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -101,52 +101,19 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-5 col-span-12">
-            <p className="text-18 text-white font-bold">Sign up for updates</p>
-            <form className="mt-8">
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter your email address"
-                  className="bg-search placeholder:text-foottext text-white! py-3 pl-5 border border-search focus:border-primary"
-                />
-                <Icon
-                  icon="solar:plain-2-linear"
-                  className="text-22 text-foottext absolute right-5 top-4"
-                />
-              </div>
-            </form>
-            <p className="text-18 text-white font-bold py-12">Get App</p>
-            <div className="flex">
-              <a href="">
-                <Image
-                  src="/images/footer/play.png"
-                  alt="Google Play"
-                  width={1000}
-                  height={1000}
-                  className="w-auto h-auto mr-5"
-                />
-              </a>
-              <a href="">
-                <Image
-                  src="/images/footer/store.png"
-                  alt="App Store"
-                  width={1000}
-                  height={1000}
-                  className="w-auto h-auto"
-                />
-              </a>
-            </div>
+            <p className="text-18 text-white font-bold">We're not just AI consultants</p><p className="text-foottext text-16 mt-5 mb-5">
+              Founded by veteran IT project leaders who've spent decades delivering complex technology solutions, Trained Logic exists to make AI accessible, practical, and profitable for Australian businesses. 
+            </p>
+            <Link href="#contact"><Button className="w-full inline-flex items-left justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-md transition"> Start free 5 min demo </Button></Link>
           </div>
         </div>
         <div className="flex items-center sm:flex-row flex-col justify-between py-10 mt-8">
           <p className="text-16 text-foottext sm:mb-0 mb-4">
             © Copyright 2025. All rights reserved by 
-              trAInedLogic.
+              trainedlogic.com.au.
           </p>
           <div className="flex gap-4">
-            {footerLinks.slice(14, 17).map((item, index) => (
+            {footerLinks.slice(12, 16).map((item, index) => (
               <div key={index} className="">
                 <Link href="#" className="text-foottext hover:text-primary">
                   {item.link}

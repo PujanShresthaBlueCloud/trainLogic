@@ -74,57 +74,51 @@ export const BeneifitImage = [
 ];
 
 // Footer Links
-export const footerLinks: { link: string }[] = [
+export const footerLinks: { link: string, name: string }[] = [
   {
-    link: "Online Payments",
+    link: "#home", name: "Home",
   },
   {
-    link: "Financial Projections",
+    link: "#services", name: "Services",
   },
   {
-    link: "Bookkeeping",
+    link: "#about", name: "About",
   },
   {
-    link: "Banking",
+    link: "#pricing", name: "Pricing"
   },
   {
-    link: "Documentation",
+    link: "#contact", name: "Contact",
   },
   {
-    link: "Integrations",
+    link: "#services", name: "AI voice agents"
   },
   {
-    link: "API Reference",
+    link: "#services", name: "AI chat agents",
   },
   {
-    link: "Support",
+    link: "Support", name: "Support",
   },
   {
-    link: "Help",
+    link: "Certifications", name: "Certifications",
   },
   {
-    link: "Infrastructure",
+    link: "Licenses", name: "Licenses",
   },
   {
-    link: "Certifications",
+    link: "Terms and conditions", name: "Terms and conditions",
   },
   {
-    link: "Licenses",
+    link: "Legal", name: "Legal",
   },
   {
-    link: "Terms and conditions",
+    link: "Privacy", name: "Privacy",
   },
   {
-    link: "Legal",
+    link: "Cookies", name: "Cookies",
   },
   {
-    link: "Privacy",
-  },
-  {
-    link: "Cookies",
-  },
-  {
-    link: "Disclaimer",
+    link: "Disclaimer", name: "Disclaimer",
   },
 ];
 
