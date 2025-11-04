@@ -5,7 +5,7 @@ import Process from "@/components/Home/Process";
 import Benefit  from "@/components/Home/Benefit";
 import Spend from "@/components/Home/Spend";
 import Services from "@/components/Home/Services";
-import Navigation from "@/components/Layout/Header/Navigation";
+import Navigation from "@/components/Layout/Navigation";
 import Method from "@/components/Home/Method";
 import Mobile from "@/components/Home/Mobile";
 import Search from "@/components/Home/Search";

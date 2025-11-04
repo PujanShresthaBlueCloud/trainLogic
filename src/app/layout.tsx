@@ -1,7 +1,7 @@
 import { DM_Sans } from "next/font/google";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Layout/Header";
+// import Header from "@/components/Layout/Header/_index";
 import Footer from "@/components/Layout/Footer";
 import { ThemeProvider } from "next-themes";
 import SessionProviderComp from "@/components/nextauth/SessionProvider";
