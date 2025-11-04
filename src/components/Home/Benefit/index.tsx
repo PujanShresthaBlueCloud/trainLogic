@@ -91,7 +91,7 @@ const Benefit = () => {
   ];
 
   return (
-    <section className="dark:bg-darkmode py-14 overflow-x-hidden">
+    <section className="dark:bg-darkmode py-14 overflow-x-hidden" id="industries">
       <div className="container lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 mx-auto">
         <div
           ref={ref}
@@ -180,7 +180,7 @@ const Benefit = () => {
               ))}
               <div className="flex items-center lg:justify-start justify-center">
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="text-17 flex gap-3 items-center bg-primary text-white py-3 px-8 rounded-lg  mt-12 border border-primary hover:text-primary hover:bg-transparent"
                 >
                   Contact Us

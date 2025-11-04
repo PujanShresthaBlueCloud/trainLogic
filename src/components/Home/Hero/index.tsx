@@ -7,6 +7,7 @@ import { Phone, Calendar, MessageSquare, Clock, CheckCircle2, ArrowRight, Mail, 
 import { ImageWithFallback } from "../../../figma/ImageWithFallback";
 import { AINetworkBackground } from "../../../ui/AINetworkBackground";
 import { CommunicationAnimation } from "../../../ui/CommunicationAnimation";
+import Link from "next/link";
 
 
 const Hero = () => {
@@ -44,14 +45,17 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white inline-flex items-center gap-2">
-                Get Started Free
-                <ArrowRight className="ml-1 w-4 h-4" />
-              </Button>
-
-              <Button size="lg" variant="outline" className="border-slate-600 text-white hover:bg-white/10">
-                Watch Demo
-              </Button>
+              <Link href="#contact">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white inline-flex items-center gap-2">
+                  Get Started Free
+                  <ArrowRight className="ml-1 w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="#industries">
+                <Button size="lg" variant="outline" className="border-slate-600 text-white hover:bg-white/10">
+                  Listen Demo
+                </Button>
+              </Link>
             </div>
 
             {/* Feature List */}

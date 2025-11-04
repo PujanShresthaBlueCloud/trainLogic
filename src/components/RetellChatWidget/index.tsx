@@ -284,7 +284,7 @@ const messagesEndRef = useRef<HTMLDivElement | null>(null);
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#A78BFA] shadow-lg shadow-purple-400 flex items-center justify-center text-white group"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-linear-to-br from-[#8B5CF6] to-[#A78BFA] shadow-lg shadow-purple-400 flex items-center justify-center text-white group"
       >
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
@@ -309,7 +309,7 @@ const messagesEndRef = useRef<HTMLDivElement | null>(null);
             className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl border-2 border-gray-200 overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] p-4 flex items-center justify-between">
+            <div className="bg-linear-to-r from-[#8B5CF6] to-[#A78BFA] p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                   <MessageCircle size={20} className="text-white" />
@@ -403,7 +403,7 @@ const messagesEndRef = useRef<HTMLDivElement | null>(null);
                 <button
                   onClick={handleSend}
                   disabled={!inputValue.trim()}
-                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] text-white flex items-center justify-center hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-10 h-10 rounded-xl bg-linear-to-r from-[#8B5CF6] to-[#A78BFA] text-white flex items-center justify-center hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={18} />
                 </button>
