@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Button } from '@/ui/button';
 
 interface NavLink {
   label: string;
@@ -167,7 +168,7 @@ const Navigation = () => {
             </motion.button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex grow items-center xl:justify-center justify-center space-x-10 text-17 text-midnight_text">
               {navLinks.map((link, index) => {
                 const isActive = activeSection === link.href;
                 return (
@@ -181,7 +182,10 @@ const Navigation = () => {
                       isActive ? 'text-[#8B5CF6]' : 'text-[#1F2937] hover:text-[#8B5CF6]'
                     }`}
                     style={{
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'Lato, sans-serif',
+                      fontSize: 15,
+                      fontWeight: 100
+
                     }}
                   >
                     {link.label}
@@ -203,10 +207,8 @@ const Navigation = () => {
 
             {/* CTA Button - Desktop */}
             <div className="hidden lg:block">
-              <motion.button
+              <Button
                 onClick={() => scrollToSection('#contact')}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white shadow-lg transition-shadow hover:shadow-xl"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
@@ -215,7 +217,7 @@ const Navigation = () => {
               >
                 Try Free Demo
                 <ArrowRight className="w-4 h-4" />
-              </motion.button>
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -298,7 +300,9 @@ const Navigation = () => {
                           : 'text-[#1F2937] hover:bg-gray-100'
                       }`}
                       style={{
-                        fontFamily: 'Inter, sans-serif',
+                        fontFamily: 'Lato, sans-serif',
+                        fontSize: 15,
+                        fontWeight: 100
                       }}
                     >
                       {link.label}
@@ -309,20 +313,22 @@ const Navigation = () => {
 
               {/* Mobile CTA Button */}
               <div className="p-6 border-t border-gray-200 mt-auto">
-                <motion.button
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
+                <Button
+                  // initial={{ opacity: 0, y: 20 }}
+                  // animate={{ opacity: 1, y: 0 }}
+                  // transition={{ delay: 0.3 }}
                   onClick={() => scrollToSection('#contact')}
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-white shadow-lg"
                   style={{
                     backgroundImage: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
-                    fontFamily: 'Inter, sans-serif',
+                    fontFamily: 'Lato, sans-serif',
+                    fontSize: 15,
+                    fontWeight: 100
                   }}
                 >
                   Try Free Demo
                   <ArrowRight className="w-4 h-4" />
-                </motion.button>
+                </Button>
 
                 {/* Additional Info */}
                 <p

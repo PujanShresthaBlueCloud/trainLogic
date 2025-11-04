@@ -9,7 +9,7 @@ const Choose = () => {
   const ref = useRef(null);
 
   return (
-    <section className="dark:bg-darkmode overflow-hidden py-14">
+    <section className="dark:bg-darkmode overflow-hidden py-14" id="about">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div
           ref={ref}

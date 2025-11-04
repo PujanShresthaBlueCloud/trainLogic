@@ -61,7 +61,7 @@ const Pricing = () => {
 
   return (
     <>
-      <section className="dark:bg-darkmode overflow-hidden py-14">
+      <section className="dark:bg-darkmode overflow-hidden py-14" id="pricing">
         <div
           ref={ref}
           className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 "
