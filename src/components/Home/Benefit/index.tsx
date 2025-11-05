@@ -91,7 +91,7 @@ const Benefit = () => {
   ];
 
   return (
-    <section className="dark:bg-darkmode py-14 overflow-x-hidden" id="industries">
+    <section className="dark:bg-darkmode py-10 overflow-x-hidden" id="industries">
       <div className="container lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4 mx-auto">
         <div
           ref={ref}
@@ -129,7 +129,7 @@ const Benefit = () => {
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                         onClick={() => handlePlayDemo(index)}
-                        className="relative flex items-center gap-4 bg-gradient-to-r from-white via-gray-50 to-gray-100 rounded-2xl px-6 py-4 border-2 border-transparent hover:border-[#8B5CF6] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden"
+                        className="relative flex items-center gap-4 bg-linear-to-r from-white via-gray-50 to-gray-100 rounded-2xl px-6 py-4 border-2 border-transparent hover:border-[#8B5CF6] hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden"
                       >
                         <div className="flex items-center gap-3 relative z-10">
                           <div className="w-14 h-14 rounded-xl bg-white/30 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform duration-300">

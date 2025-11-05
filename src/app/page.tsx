@@ -30,7 +30,7 @@ export default function Home() {
       <Choose />
       {/* <Mobile /> */}
       {/* <Search /> */}
-      <Pricing />
+      {/* <Pricing /> */}
       <ContactFormHome />
       {/* <Solution /> */}
       

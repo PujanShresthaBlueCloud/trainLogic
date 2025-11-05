@@ -109,7 +109,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-400" />
-                <span className="text-slate-300 text-sm">Setup in 5 Minutes</span>
+                <span className="text-slate-300 text-sm">Trusted by Australian businesses</span> 
               </div>
             </div>
           </div>

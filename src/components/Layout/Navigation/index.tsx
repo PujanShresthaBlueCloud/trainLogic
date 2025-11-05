@@ -18,12 +18,13 @@ const Navigation = () => {
 
   const navLinks: NavLink[] = [
     { label: 'Home', href: '#hero' },
-    { label: 'Services', href: '#services' },
     { label: 'Process', href: '#process' },
+    { label: 'Industries', href: '#industries'},
+    { label: 'Services', href: '#services' },
     { label: 'About', href: '#about' },
     // { label: 'Team', href: '#team' },
     // { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Pricing', href: '#pricing' },
+    // { label: 'Pricing', href: '#pricing' },
     { label: 'Contact', href: '#contact' },
   ];
 

@@ -3,7 +3,7 @@ import { motion, useInView } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { PaymentImage } from "@/app/api/data";
 import Image from "next/image";
-import { Brain, Rocket, Wrench, Play } from "lucide-react";
+import { Brain, Rocket, Wrench, Play, CirclePlay} from "lucide-react";
 // import { motion } from "framer-motion";
 
 const steps = [
@@ -43,7 +43,18 @@ const Process: React.FC = () => {
     transition: { duration: 1, delay: 0.4 + index * 0.4 },
   });
 
-  const paymentItems = ["Free Consultation", "Proposal & Plan"];
+  const paymentItems = [
+    { 
+      name: "Discovery Meeting",
+      icon: "Binoculars",
+      description: "Tell us about your business and see a live demo",
+    },
+    {
+      name: "Proposal & Plan",
+      icon: "NotebookPen",
+      description: "Get a tailored quote with clear ROI estimates",
+    }
+  ];
 
   // === TYPED REFS & STATE ===
   // typed container ref
@@ -117,7 +128,7 @@ const Process: React.FC = () => {
   }, []);
 
   return (
-    <section id="process" className="dark:bg-darkmode py-14">
+    <section id="process" className="dark:bg-darkmode py-10">
       <div ref={ref} className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <motion.div {...TopAnimation}>
           <div className="px-4 lg:px-12">
@@ -130,17 +141,27 @@ const Process: React.FC = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-10">
             {paymentItems.map((item, index) => (
-              <p
-                key={index}
-                className={`text-muted dark:text-white/60 md:text-18 text-base font-medium relative ${
-                  index !== paymentItems.length - 1
-                    ? "after:content-[''] after:absolute after:w-0.5 after:h-3/4 after:bg-muted after:rounded-full after:-right-5 after:top-0.5"
-                    : ""
-                }`}
-              >
-                {item}
-              </p>
-            ))}
+                <div>
+                  <p
+                    key={index}
+                    className={`flex items-center justify-center gap-2  /* 🔹 Flex alignment */
+                      text-blue-500 dark:text-white/60 
+                      md:text-18 text-base font-medium relative 
+                      ${
+                        index !== paymentItems.length - 1
+                          ? "after:content-[''] after:absolute after:w-0.5 after:h-3/4 after:bg-muted after:rounded-full after:-right-5 after:top-0.5"
+                          : ""
+                      }`}
+                  >
+                    <CirclePlay className="w-5 h-5" />  {/* 🔹 Optional: control icon size */}
+                    {item.name}
+                  </p>
+
+                  <p className="text-gray-600 text-base leading-relaxed text-center">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
           </div>
         </motion.div>
 
@@ -188,7 +209,7 @@ const Process: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15 }}
-                    className="group bg-transparent text-center p-8 rounded-2xl hover:border-purple-400 hover:shadow-lg transition-all duration-300 border border-transparent"
+                    className="group bg-transparent text-center p-8 rounded-2xl hover:border-purple-400 hover:shadow-lg transition-all duration-300 border  :border-purple-500"
                   >
                     <div ref={(el) => { iconRefs.current[index] = el; }} className="flex justify-center mb-6">
                       <Icon className={`w-12 h-12 ${step.color}`} />

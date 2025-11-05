@@ -9,7 +9,7 @@ const Choose = () => {
   const ref = useRef(null);
 
   return (
-    <section className="dark:bg-darkmode overflow-hidden py-14" id="about">
+    <section className="dark:bg-darkmode overflow-hidden py-10" id="about">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div
           ref={ref}
@@ -17,7 +17,7 @@ const Choose = () => {
         >
           <div className="text-center">
             <h2 className="md:text-35 sm:text-28 text-24 text-midnight_text font-semibold mb-5 dark:text-white lg:max-w-full sm:max-w-75% mx-auto">
-              Why Choose TR<span className="text-primary max-w-max ml-2">[AI]</span>
+              Why Choose TR<span className="text-primaryd">[AI]</span>
               NED LOGIC
             </h2>
             <p className="text-muted dark:text-white/60 md:text-19 text-16 md:mb-14 mb-8">
