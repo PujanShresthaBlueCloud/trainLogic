@@ -35,17 +35,7 @@ const Choose = () => {
                     <p className="text-muted dark:text-white/60 md:text-19 text-16 md:mb-14 mb-8">
                       We cut through the AI hype to deliver strategies that make sense for your business—no jargon, no complexity you don't need.
                     </p>
-                    <Link
-                      href="#contact"
-                      className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
-                    >
-                      Get Started
-                      <Icon
-                        icon="solar:alt-arrow-right-linear"
-                        width="13"
-                        height="13"
-                      />
-                    </Link>
+                    
                   </div>
                   <div>
                     <Image
@@ -70,17 +60,6 @@ const Choose = () => {
                   <p className="text-muted dark:text-white/60 md:text-19 text-16 mb-8">
                     Every recommendation is explainable. Every model is auditable. We build AI systems you can confidently stand behind.
                   </p>
-                  <Link
-                    href="#contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
-                  >
-                    Get Started
-                    <Icon
-                      icon="solar:alt-arrow-right-linear"
-                      width="13"
-                      height="13"
-                    />
-                  </Link>
                 </div>
                 <div className="sm:block hidden w-full pr-5">
                   <Image
@@ -102,17 +81,6 @@ const Choose = () => {
                   <p className="text-muted dark:text-white/60 md:text-19 text-16 mb-8">
                     We don't just implement—we educate. Your team gains the knowledge and confidence to own your AI future.
                   </p>
-                  <Link
-                    href="#contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
-                  >
-                    Get Started
-                    <Icon
-                      icon="solar:alt-arrow-right-linear"
-                      width="13"
-                      height="13"
-                    />
-                  </Link>
                 </div>
                 <div className="sm:block hidden w-full pr-5">
                   <Image
@@ -138,24 +106,13 @@ const Choose = () => {
                     className="w-full"
                   />
                 </div>
-                <div className="px-9 flex justify-center flex-col py-6 mb-23 mt-8">
+                <div className="px-9 flex justify-center flex-col py-6 mb-17 mt-8">
                   <h3 className="md:text-25 text-20 font-medium text-midnight_text dark:text-white mb-6">
                     Solutions That Evolve
                   </h3>
                   <p className="text-muted dark:text-white/60 md:text-19 text-16 md:mb-3">
                     We design intelligent systems that grow with your business, adapting to new challenges and opportunities.
                   </p>
-                  <Link
-                    href="#contact"
-                    className="text-17 flex gap-2 items-center hover:text-blue-700 text-primary w-fit"
-                  >
-                    Get Started
-                    <Icon
-                      icon="solar:alt-arrow-right-linear"
-                      width="13"
-                      height="13"
-                    />
-                  </Link>
                 </div>
               </div>
             </div>

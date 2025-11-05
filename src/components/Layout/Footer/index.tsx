@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 text-foottext">
               <Icon icon="majesticons:phone-retro-line" className="w-7 h-7" />
               <Link href="#" className="text-16 hover:text-primary">
-                <span> +1 (123) 123 1234</span>
+                <span>0468 055 770</span>
               </Link>
             </div>
             <div className="flex items-center text-foottext gap-2">
@@ -46,12 +46,26 @@ const Footer = () => {
           </div>
         </div>
         <div className="grid grid-cols-12 sm:mb-16 mb-8 pt-8 gap-4 relative before:content-[''] before:absolute before:w-20 before:h-20 before:bg-[url('/images/footer/bgcir.png')] before:bg-no-repeat before:-left-36 before:bottom-9 lg:before:block before:hidden">
-          <div className="md:col-span-2 col-span-6 mb-4 md:mb-0 ml-10">
+          <div className="md:col-span-2  mb-4 md:mb-0 ml-10">
             <h4 className="text-18 text-white dark:text-white mb-3">
               Links
             </h4>
             <ul>
-              {footerLinks.slice(0, 5).map((item, index) => (
+              {footerLinks.slice(0, 3).map((item, index) => (
+                <li key={index} className="pb-3">
+                  <Link
+                    href={item.link}
+                    className="text-foottext text-16 hover:text-primary"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-2  mb-4 md:mb-0 ml-10">
+            <ul className="mt-8">
+              {footerLinks.slice(3, 6).map((item, index) => (
                 <li key={index} className="pb-3">
                   <Link
                     href={item.link}
@@ -64,25 +78,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="md:col-span-2 col-span-6 mb-4 md:mb-0">
-            <h4 className="text-18 text-white dark:text-white mb-3">
-              Services
-            </h4>
-            <ul>
-              {footerLinks.slice(5, 7).map((item, index) => (
-                <li key={index} className="pb-3">
-                  <Link
-                    href={item.link}
-                    className="text-foottext text-16 hover:text-primary"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
-          <div className="md:col-span-3 col-span-6 mb-4 md:mb-0">
+          {/* <div className="md:col-span-3 col-span-6 mb-4 md:mb-0">
             <h4 className="text-18 text-white dark:text-white mb-3">
               Resources
             </h4>
@@ -98,7 +95,27 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div> */}
+
+          <div className="md:col-span-2 col-span-6 mb-4 md:mb-0">
+            <h4 className="text-18 text-white dark:text-white mb-3">
+              Services
+            </h4>
+            <ul>
+              {footerLinks.slice(6, 8).map((item, index) => (
+                <li key={index} className="pb-3">
+                  <Link
+                    href={item.link}
+                    className="text-foottext text-16 hover:text-primary"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
+
 
           <div className="md:col-span-5 col-span-12">
             <p className="text-18 text-white font-bold">We're not just AI consultants</p><p className="text-foottext text-16 mt-5 mb-5">
@@ -113,7 +130,7 @@ const Footer = () => {
               trainedlogic.com.au.
           </p>
           <div className="flex gap-4">
-            {footerLinks.slice(12, 16).map((item, index) => (
+            {footerLinks.slice(8, 10).map((item, index) => (
               <div key={index} className="">
                 <Link href="#" className="text-foottext hover:text-primary">
                   {item.link}

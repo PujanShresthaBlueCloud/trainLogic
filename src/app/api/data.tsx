@@ -78,15 +78,21 @@ export const footerLinks: { link: string, name: string }[] = [
   {
     link: "#home", name: "Home",
   },
+   {
+    link: "#process", name: "Process",
+  },
+   {
+    link: "#industries", name: "Industries",
+  },
   {
     link: "#services", name: "Services",
   },
   {
     link: "#about", name: "About",
   },
-  {
-    link: "#pricing", name: "Pricing"
-  },
+  // {
+    // link: "#pricing", name: "Pricing"
+  // },
   {
     link: "#contact", name: "Contact",
   },
@@ -96,30 +102,30 @@ export const footerLinks: { link: string, name: string }[] = [
   {
     link: "#services", name: "AI chat agents",
   },
-  {
-    link: "Support", name: "Support",
-  },
-  {
-    link: "Certifications", name: "Certifications",
-  },
-  {
-    link: "Licenses", name: "Licenses",
-  },
-  {
-    link: "Terms and conditions", name: "Terms and conditions",
-  },
-  {
-    link: "Legal", name: "Legal",
-  },
-  {
-    link: "Privacy", name: "Privacy",
-  },
-  {
-    link: "Cookies", name: "Cookies",
-  },
-  {
-    link: "Disclaimer", name: "Disclaimer",
-  },
+  // {
+  //   link: "Support", name: "Support",
+  // },
+  // {
+  //   link: "Certifications", name: "Certifications",
+  // },
+  // {
+  //   link: "Licenses", name: "Licenses",
+  // },
+  // {
+  //   link: "Terms and conditions", name: "Terms and conditions",
+  // },
+  // {
+  //   link: "Legal", name: "Legal",
+  // },
+  // {
+  //   link: "Privacy", name: "Privacy",
+  // },
+  // {
+  //   link: "Cookies", name: "Cookies",
+  // },
+  // {
+  //   link: "Disclaimer", name: "Disclaimer",
+  // },
 ];
 
 // Perks

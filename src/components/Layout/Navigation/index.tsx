@@ -214,6 +214,7 @@ const Navigation = () => {
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
                   fontFamily: 'Inter, sans-serif',
+                  visibility: 'hidden'
                 }}
               >
                 Try Free Demo
@@ -324,7 +325,8 @@ const Navigation = () => {
                     backgroundImage: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
                     fontFamily: 'Lato, sans-serif',
                     fontSize: 15,
-                    fontWeight: 100
+                    fontWeight: 100,
+                    visibility: 'hidden'
                   }}
                 >
                   Try Free Demo

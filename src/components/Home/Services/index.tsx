@@ -66,10 +66,10 @@ const Services: FC = () => {
                   </ul>
                   <p className="text-base sm:text-lg font-semibold mt-4 text-17 text-muted dark:text-white/60">PERFECT FOR:</p>
                   <p className="text-base sm:text-lg text-17 text-muted dark:text-white/60">Migration agents, mortgage brokers, accountants, and any business that gets the same questions again and again.</p>
-                  <Button size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white"> {/* Use size="lg" for a larger button */}
-                    <Play className="mr-2 h-4 w-4" /> {/* Icon with margin-right for spacing */}
-                    Chat with your own system
-                  </Button>     
+                  {/* <Button size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white"> Use size="lg" for a larger button */}
+                    {/* <Play className="mr-2 h-4 w-4" /> Icon with margin-right for spacing */}
+                    {/* Chat with your own system */}
+                  {/* </Button>      */}
                 </CardContent>
               </Card>
             </div>
@@ -93,10 +93,10 @@ const Services: FC = () => {
                   <p className="text-base sm:text-lg font-semibold mt-4 text-17 text-muted dark:text-white/60">BEST FOR:</p>
                   <p className="text-base sm:text-lg text-17 text-muted dark:text-white/60">Trades, legal firms, or any business where missed calls mean missed income.</p>
                   <span className="text-green-500">
-                  <Button size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white"> {/* Use size="lg" for a larger button */}
-                    <Play className="mr-2 h-4 w-4" /> {/* Icon with margin-right for spacing */}
-                    Listen to your own demo
-                  </Button>
+                  {/* <Button size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white"> Use size="lg" for a larger button */}
+                    {/* <Play className="mr-2 h-4 w-4" /> Icon with margin-right for spacing */}
+                    {/* Listen to your own demo */}
+                  {/* </Button> */}
                   </span>
                 </CardContent>
               </Card>
