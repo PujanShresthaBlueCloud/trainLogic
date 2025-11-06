@@ -1,364 +1,8 @@
-// "use client";
-// import React, { useState, useRef } from "react";
-// import { Icon } from "@iconify/react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { review } from "@/app/api/data";
-// import { CheckCircle, Lock, Phone, CaptionsOff, Clock } from "lucide-react";
-
-// const ContactFormHome = () => {
-//   const [form, setForm] = useState({ name: "", business: "", phone: "" });
-// //   const [errors, setErrors] = useState({});
-//   const [errors, setErrors] = useState<Partial<Record<'name'|'business'|'phone'|'submit', string>>>({});
-//   const [submitting, setSubmitting] = useState(false);
-//   const [success, setSuccess] = useState(false);
-
-//   const businessOptions = [
-//     "Builder / Renovator",
-//     "Plumber",
-//     "Removalist",
-//     "Migration Agent",
-//     "Mortgage Broker",
-//     "Electrician",
-//   ];
-
-//   // Loose AU phone validator (accepts common formats)
-//   const auPhoneRegex = /^(?:\+61\s?4\d{2}\s?\d{3}\s?\d{3}|\+61\s?[2378]\s?\d{4}\s?\d{4})$/;
-
-//   function formatAustralianPhone(value:any) {
-//     if (!value) return "";
-//     let digits = value.replace(/[^+0-9]/g, "");
-//     if (digits.startsWith("0")) {
-//       digits = "+61" + digits.slice(1);
-//     }
-//     if (digits.startsWith("61") && !digits.startsWith("+61")) {
-//       digits = "+" + digits;
-//     }
-
-//     const onlyDigits = digits.replace(/[^0-9]/g, "");
-//     return digits;
-//   }
-
-//   function validate() {
-//     // const e: FormErrors = {};
-//     // const e = {} as FormErrors;
-//     const e = {} as Partial<Record<'name' | 'business' | 'phone' | 'submit', string>>;
-
-//     if (!form.name.trim()) e.name = "Please enter your full name.";
-//     if (!form.business) e.business = "Please select your business type.";
-//     if (!form.phone.trim()) {
-//       e.phone = "Please enter your phone number.";
-//     } else if (!auPhoneRegex.test(form.phone.trim())) {
-//       e.phone = "Enter a valid Australian phone (e.g. +61 412 345 678 or +61 2 1234 5678).";
-//     }
-//     setErrors(e);
-//     return Object.keys(e).length === 0;
-//   }
-
-// //   async function handleSubmit(evt) {
-// async function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
-
-//     evt.preventDefault();
-//     setSuccess(false);
-//     if (!validate()) return;
-//     setSubmitting(true);
-//     try {
-//       const res = await fetch('/api/contact', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ name: form.name.trim(), business: form.business, phone: form.phone.trim() })
-//       });
-//       if (!res.ok) throw new Error('Server error');
-//       setSuccess(true);
-//       setForm({ name: '', business: '', phone: '' });
-//       setErrors({});
-//     } catch (err) {
-//       console.error(err);
-//       setErrors({ submit: 'Failed to submit. Please try again later.' });
-//     } finally {
-//       setSubmitting(false);
-//     }
-//   }
-
-//   const ref = useRef(null);
-
-//   const renderStars = (rating: any) => {
-//     const fullStars = Math.floor(rating);
-//     const halfStars = rating % 1 >= 0.5 ? 1 : 0;
-//     const emptyStars = 5 - fullStars - halfStars;
-
-//     const stars = [];
-
-//     for (let i = 0; i < fullStars; i++) {
-//       stars.push(
-//         <Icon
-//           key={`full-${i}`}
-//           icon="ph:star-fill"
-//           className="w-5 h-5 text-yellow-500"
-//         />
-//       );
-//     }
-
-//     if (halfStars) {
-//       stars.push(
-//         <Icon
-//           key="half"
-//           icon="ph:star-half-fill"
-//           className="w-5 h-5 text-yellow-500"
-//         />
-//       );
-//     }
-
-//     for (let i = 0; i < emptyStars; i++) {
-//       stars.push(
-//         <Icon
-//           key={`empty-${i}`}
-//           icon="ph:star-bold"
-//           className="w-5 h-5 text-yellow-500"
-//         />
-//       );
-//     }
-
-//     return stars;
-//   };
-
-//   return (
-//     <section className="dark:bg-darkmode overflow-hidden py-10" id="contact">
-//       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-//         <div
-//           ref={ref}
-          
-//         >
-//           <div className="text-center lg:px-20 px-4 pt-12">
-//             <h1 className="text-midnight_text font-bold dark:text-white md:text-35 sm:text-28 text-24 mt-4">Let's Bring Your AI Vision to Life</h1>
-//             <div className="flex justify-center">
-//               <Image
-//                 src="/images/search/free.png"
-//                 alt="image"
-//                 width={67}
-//                 height={38}
-//               />
-//             </div>
-//             <h2 className="text-midnight_text font-bold dark:text-white md:text-35 sm:text-28 text-24 mt-4">
-//               Request Your Free <span className="lg:text-35 text-primary text-24"> Demo </span>
-//             </h2>
-
-//             <div className="md:max-w-75% mx-auto mt-6">
-//               <div className="flex items-start justify-center">
-//                 <form onSubmit={handleSubmit} className="w-full max-w-md text-left bg-white rounded-xl p-6 shadow-sm" aria-label="Contact form">
-
-//                   {/* Name */}
-//                   <label className="block mb-3">
-//                     <span className="text-sm font-medium">Full Name</span>
-//                     <input
-//                       aria-label="Full name"
-//                       placeholder="Full name"
-//                       value={form.name}
-//                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-//                       className={`mt-1 block w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-300 ${errors.name ? 'border-red-300' : 'border-gray-200'}`}
-//                       aria-invalid={errors.name ? "true" : "false"}
-//                       required
-//                     />
-//                     {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
-//                   </label>
-
-//                   {/* Phone */}
-//                   <label className="block mb-4">
-//                     {/* <div className="flex justify-between items-center mb-1"> */}
-//                       {/* <div className="flex items-center gap-2 text-gray-700 font-medium">
-//                         <Phone className="w-4 h-4 text-green-600" />
-//                         <span className="text-sm font-medium">Call me now</span>
-//                       </div> */}
-                      
-//                     {/* <p className="text-xs text-gray-500 mb-1">We will call you in 10 sec</p> */}
-//                     <span className="text-sm font-medium block mb-1">Mobile Number</span>
-//                     <input
-//                       aria-label="Phone number"
-//                       placeholder="xxxx xxx xxx"
-//                       value={form.phone}
-//                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-//                       onBlur={(e) => setForm({ ...form, phone: formatAustralianPhone(e.target.value) })}
-//                       className={`mt-1 block w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-300 ${errors.phone ? 'border-red-300' : 'border-gray-200'}`}
-//                       aria-invalid={errors.phone ? "true" : "false"}
-//                       required
-//                     />
-//                     {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone}</p>}
-//                   </label>
-
-//                   {/* Business Type */}
-//                   <label className="block mb-3">
-//                     <span className="text-sm font-medium">Select Your Business <span className="text-red-500">*</span></span>
-//                     <select
-//                       aria-label="Business type"
-//                       value={form.business}
-//                       onChange={(e) => setForm({ ...form, business: e.target.value })}
-//                       className={`mt-1 block w-full rounded-md border px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-300 ${errors.business ? 'border-red-300' : 'border-gray-200'}`}
-//                       aria-invalid={errors.business ? "true" : "false"}
-//                       required
-//                     >
-//                       <option value="">Please select your business type</option>
-//                       {businessOptions.map((b) => (
-//                         <option key={b} value={b}>{b}</option>
-//                       ))}
-//                     </select>
-//                     {errors.business && <p className="text-xs text-red-600 mt-1">{errors.business}</p>}
-//                   </label>
-//                   <button
-//                     type="submit"
-//                     disabled={submitting}
-//                     className="w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-md transition disabled:opacity-60"
-//                   >
-//                     {submitting ? 'Please wait…' : 'Start My 5-Minute Demo'}
-//                   </button>
-
-//                   {errors.submit && <div className="mt-4 text-red-700 font-medium">{errors.submit}</div>}
-//                   {success && <div className="mt-4 text-green-700 font-medium">Thanks — we will call you shortly.</div>}
-//                 </form>
-//               </div>
-//               <div className="mt-6 border-t pt-4 text-center">
-//                 <div className="flex flex-wrap justify-center items-center gap-3 text-sm text-gray-700">
-//                   <CaptionsOff className="w-5 h-5 text-green-500" />
-//                   <span>No credit card required</span>
-//                   <CheckCircle className="w-5 h-5 text-green-500" />
-//                   <span>No commitment</span>
-//                   <Clock className="w-5 h-5 text-green-500" />
-//                   <span>Just 2 minutes</span>
-//                 </div>
-
-//                 <div className="flex justify-center items-center gap-2 text-sm text-gray-700 mt-2">
-//                   <Lock className="w-4 h-4 text-gray-500" />
-//                   <span className="font-medium">Your information is secure</span>
-//                 </div>
-//               </div>
-//             </div>
-//             {/* Disabled client opinions ---- */}
-//             {/* <div className="mt-20">
-//               {review.map((item, index) => (
-//                 <div
-//                   key={index}
-//                   className="bg-white rounded-3xl lg:py-16 sm:py-10 py-5 my-2 lg:px-24 sm:px-12 px-6 dark:bg-darkmode"
-//                 >
-//                   <div className="grid lg:grid-cols-2 lg:gap-0 gap-7">
-//                     <div>
-//                       <div className="mb-10">
-//                         <Image
-//                           src="/images/search/double.png"
-//                           alt="image"
-//                           width={52}
-//                           height={39}
-//                         />
-//                       </div>
-//                       <p className="text-midnight_text dark:text-white text-base mb-9">
-//                         {item.text}
-//                       </p>
-//                       <div className="flex items-center gap-4">
-//                         <div>
-//                           <Image
-//                             src={item.image}
-//                             alt={item.name}
-//                             width={64}
-//                             height={64}
-//                           />
-//                         </div>
-//                         <div className="flex sm:items-center sm:gap-2 sm:flex-row flex-col">
-//                           <h3 className="font-medium text-base text-midnight_text dark:text-white">
-//                             {item.name}
-//                           </h3>
-//                           <Icon
-//                             icon="bytesize:minus"
-//                             className="sm:block hidden"
-//                           />
-//                           <h5 className="text-muted dark:text-muted text-base">
-//                             {item.post}
-//                           </h5>
-//                         </div>
-//                       </div>
-//                     </div>
-//                     <div className="flex sm:items-center items-start lg:justify-evenly sm:flex-row flex-col lg:gap-0 gap-10">
-//                       <div>
-//                         <div className="sm:mb-8 mb-5">
-//                           <div className="flex gap-2 mb-3">
-//                             {renderStars(parseFloat(item.appstorerating))}
-//                           </div>
-//                           <p className="text-muted text-base">
-//                             <span className="text-midnight_text dark:text-white font-bold">
-//                               {item.appstorerating}
-//                             </span>
-//                             /5 — From 1800+ ratings
-//                           </p>
-//                         </div>
-//                         <div>
-//                           <Link href="#">
-//                             <Image
-//                               src="/images/search/app.png"
-//                               alt="app store"
-//                               width={130}
-//                               height={44}
-//                             />
-//                           </Link>
-//                         </div>
-//                       </div>
-//                       <div>
-//                         <div className="sm:mb-8 mb-5">
-//                           <div className="flex gap-2 mb-3">
-//                             {renderStars(parseFloat(item.gplayrating))}
-//                           </div>
-//                           <p className="text-muted text-base">
-//                             <span className="text-midnight_text dark:text-white font-bold">
-//                               {item.gplayrating}
-//                             </span>
-//                             /5 — From 1800+ ratings
-//                           </p>
-//                         </div>
-//                         <div>
-//                           <Link href="/">
-//                             <Image
-//                               src="/images/search/google.png"
-//                               alt="google play"
-//                               width={130}
-//                               height={44}
-//                             />
-//                           </Link>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div> */}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ContactFormHome;
-
-
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckIcon, PhoneIcon, ChevronDownIcon, Loader, AlertTriangleIcon, LockIcon, ArrowLeftIcon } from 'lucide-react';
 
 // --- Configuration ---
-// Map business types to their unique Retell AI Agent IDs
-const agentIdMap: Record<string, string> = {
-    "Builder / Renovator": "agent_208183adba8913a73ac3c58e82",
-    "Plumber": "agent_700c951b18e58b9ed7717b7b38",
-    "Removalist": "agent_208183adba8913a73ac3c58e82",
-    "Migration Agent": "agent_6ed8355ac98c9988ac22f69fe9",
-    "Mortgage Broker": "agent_208183adba8913a73ac3c58e82",
-    "Electrician": "agent_208183adba8913a73ac3c58e82",
-};
-
-// WARNING: Storing API keys and auth tokens on the client-side is highly insecure.
-// These should be handled by a secure backend service in a production environment to prevent unauthorized use.
-
-
-const TWILIO_VERIFY_SERVICE_SID = process.env.NEXT_PUBLIC_TWILIO_VERIFY_SERVICE_SID;
-const TWILIO_AUTH_HEADER = process.env.NEXT_PUBLIC_TWILIO_AUTH_HEADER;
-const RETELL_API_KEY = process.env.NEXT_PUBLIC_RETELL_API_KEY;
-
 const businessTypes = ['Builder / Renovator', 'Plumber', 'Removalist', 'Migration Agent', 'Mortgage Broker', 'Electrician'];
 
 type FormStep = 'details' | 'otp' | 'submitted';
@@ -376,6 +20,7 @@ const ContactFormHome: React.FC = () => {
         phone: '',
         businessType: '',
     });
+
     const [userOtp, setUserOtp] = useState('');
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isLoading, setIsLoading] = useState(false);
@@ -477,31 +122,22 @@ const ContactFormHome: React.FC = () => {
         setApiError('');
     };
     
+
+
     // --- API Logic ---
     const handleDetailsSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setApiError('');
 
-        if (!TWILIO_AUTH_HEADER || !TWILIO_VERIFY_SERVICE_SID) {
-            setApiError('This feature is currently unavailable. Please contact support.');
-            return;
-        }
         if (!validateForm()) return;
 
         setIsLoading(true);
         const formattedPhone = getFormattedPhoneNumber();
-
         try {
-            const response = await fetch(`https://verify.twilio.com/v2/Services/${TWILIO_VERIFY_SERVICE_SID}/Verifications`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': TWILIO_AUTH_HEADER,
-                },
-                body: new URLSearchParams({
-                    'To': formattedPhone,
-                    'Channel': 'sms'
-                })
+            const response = await fetch('/api/twilio/verification', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name:formData.fullName, phoneNumber: getFormattedPhoneNumber(), business: formData.businessType })
             });
 
             if (!response.ok) {
@@ -527,25 +163,14 @@ const ContactFormHome: React.FC = () => {
         setIsLoading(true);
         setApiError('');
     
-        if (!TWILIO_AUTH_HEADER || !TWILIO_VERIFY_SERVICE_SID || !RETELL_API_KEY) {
-            setApiError('This feature is currently unavailable. Please contact support.');
-            setIsLoading(false);
-            return;
-        }
         const formattedPhone = getFormattedPhoneNumber();
         
         try {
             // Step 1: Verify the OTP with Twilio
-            const verificationResponse = await fetch(`https://verify.twilio.com/v2/Services/${TWILIO_VERIFY_SERVICE_SID}/VerificationCheck`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': TWILIO_AUTH_HEADER,
-                },
-                body: new URLSearchParams({
-                    'To': formattedPhone,
-                    'Code': userOtp
-                })
+            const verificationResponse = await fetch('/api/twilio/otp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ phoneNumber: getFormattedPhoneNumber(), userOtp })
             });
     
             const verificationData = await verificationResponse.json();
@@ -555,22 +180,10 @@ const ContactFormHome: React.FC = () => {
             }
     
             // Step 2: If OTP is approved, create the phone call with Retell AI
-            const agentId = agentIdMap[formData.businessType];
-    
-            const retellResponse = await fetch('https://api.retellai.com/v2/create-phone-call', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${RETELL_API_KEY}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    from_number: "+61468055770",
-                    to_number: formattedPhone,
-                    override_agent_id: agentId,
-                    retell_llm_dynamic_variables: {
-                        full_name: formData.fullName,
-                    },
-                }),
+            const retellResponse = await fetch('/api/retell', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name:formData.fullName, phoneNumber: getFormattedPhoneNumber(), businessType: formData.businessType, from_number: "+61468055770"})
             });
     
             if (!retellResponse.ok) {

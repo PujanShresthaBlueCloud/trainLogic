@@ -141,9 +141,8 @@ const Process: React.FC = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-10">
             {paymentItems.map((item, index) => (
-                <div>
+                <div key={index}>
                   <p
-                    key={index}
                     className={`flex items-center justify-center gap-2  /* 🔹 Flex alignment */
                       text-blue-500 dark:text-white/60 
                       md:text-18 text-base font-medium relative 
