@@ -38,6 +38,10 @@ export default function RootLayout({
             >
               {/* <Header /> */}
               {children}
+
+              <Footer />
+              {/* <ScrollToTop /> */}
+              {/* <RetellChatWidget /> */}
               <Script
                 id="retell-widget"
                 src={process.env.RETELL_CHAT_URL}
@@ -47,9 +51,6 @@ export default function RootLayout({
                 data-agent-version="0" // Or your specific agent version
                 data-title={metadata.title}
               />
-              <Footer />
-              {/* <ScrollToTop /> */}
-              {/* <RetellChatWidget /> */}
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>
