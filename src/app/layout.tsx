@@ -1,5 +1,6 @@
 import { DM_Sans } from "next/font/google";
 import { Lato } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 // import Header from "@/components/Layout/Header/_index";
 import Footer from "@/components/Layout/Footer";
@@ -15,7 +16,9 @@ const lato = Lato({
   weight: ["400", "700"],  // optional: normal & bold
   display: "swap",         // optional: font-display
 })
-
+export const metadata = {
+  title: "Trained Logic",
+};
 export default function RootLayout({
   children,
   session,
@@ -35,9 +38,18 @@ export default function RootLayout({
             >
               {/* <Header /> */}
               {children}
+              <Script
+                id="retell-widget"
+                src={process.env.RETELL_CHAT_URL}
+                type="module"
+                data-public-key={process.env.RETELL_PUBLIC_API_KEY}
+                data-agent-id={process.env.RETELL_AGENT_ID}
+                data-agent-version="0" // Or your specific agent version
+                data-title={metadata.title}
+              />
               <Footer />
               {/* <ScrollToTop /> */}
-              <RetellChatWidget />
+              {/* <RetellChatWidget /> */}
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>
