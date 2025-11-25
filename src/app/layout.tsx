@@ -16,9 +16,7 @@ const lato = Lato({
   weight: ["400", "700"],  // optional: normal & bold
   display: "swap",         // optional: font-display
 })
-export const metadata = {
-  title: "Trained Logic",
-};
+
 export default function RootLayout({
   children,
   session,
@@ -41,16 +39,7 @@ export default function RootLayout({
 
               <Footer />
               {/* <ScrollToTop /> */}
-              {/* <RetellChatWidget /> */}
-              <Script
-                id="retell-widget"
-                src={process.env.RETELL_CHAT_URL}
-                type="module"
-                data-public-key={process.env.RETELL_PUBLIC_API_KEY}
-                data-agent-id={process.env.RETELL_AGENT_ID}
-                data-agent-version="0" // Or your specific agent version
-                data-title={metadata.title}
-              />
+              <RetellChatWidget />
             </ThemeProvider>
           </SessionProviderComp>
         </AuthDialogProvider>

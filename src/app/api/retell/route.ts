@@ -38,6 +38,7 @@ export async function POST(req: NextRequest) {
             override_agent_id: agentId,
             retell_llm_dynamic_variables: {
             full_name: name,
+            phone: phoneNumber,
             },
         }),
     });
