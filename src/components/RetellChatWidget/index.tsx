@@ -111,7 +111,7 @@ const RetellChatWidget = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 h-[480px] bg-white shadow-2xl border rounded-xl flex flex-col overflow-hidden animate-fadeIn">
           <div className="p-3 bg-blue-600 text-white font-bold">
-            Trained Logic
+            Trained Logic Assistant
           </div>
 
           {error && <div className="text-red-500 p-2">{error}</div>}
