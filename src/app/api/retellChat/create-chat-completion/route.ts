@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     // Extract the AI response from the completion
     // const aiResponse = response.messages?.[0]?.content || 'No response from AI.';
-    const aiResponse = response.messages?.find( (m): m is { content: string } => typeof (m as any).content === 'string' )?.content ?? 'No response from AI.';
+    const aiResponse = response.messages?.[0] || 'No response from AI.';
 
     return NextResponse.json({ aiResponse });
 
